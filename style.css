@@ -1,19 +1,63 @@
-body{
+body {
     background-image: url(img/background-blue.png);
-    animation:  moveIt 10s linear infinite;
+    animation: moveIt 6s linear infinite;
+    margin: 0; 
+    padding: 0; 
+    overflow: hidden; 
 }
 
-#spaceship{
-    position: absolute  ;
-    right: 50px; 
-    top : 600px;
+#spaceship {
+    position: absolute;
+    right: 50px;
+    top: 80%;
     left: 50px;
     bottom: 0px;
     width: 80px;
     height: 80px;
-} 
- 
+}
+
 @keyframes moveIt {
-    from {background-position: bottom left;}
-    to {background-position: top right;}
-  }
+    from {
+        background-position: bottom left;
+    }
+    to {
+        background-position: top left;
+    }
+}
+
+@keyframes moveInCircle {
+    0% {
+        transform: rotate(0deg) translate(200px, 50px) rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg) translate(200px, 50px) rotate(-360deg);
+    }
+}
+
+
+.enemy {
+    animation: moveInCircle 6s linear infinite;
+    width: 70px;
+    height: 70px;
+    margin: 0;
+    padding: 0;
+}
+
+.enemy-container {
+     display: grid; 
+     grid-template-columns: repeat(6, 80px);
+    grid-auto-rows: 80px; 
+    gap: 3px;
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    padding: 0;
+}
+
+.spaceshipLaser {
+    position: absolute;
+    height: 20px;
+}
+
