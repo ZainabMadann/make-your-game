@@ -10,7 +10,7 @@ const spaceship = document.getElementById('spaceship');
 const spaceshipWidth = spaceship.offsetWidth;
 const windowWidth = window.innerWidth;
 let leftPosition = spaceship.offsetLeft;
-let speed = 10
+let speed = 3
 
 export function setupControls() {
     document.addEventListener('keydown', (e) => {
@@ -42,12 +42,12 @@ export function spaceshipMovement() {
 
     function moveSpaceship() {
         if (keys.left) {
-            leftPosition -= 10;
+            leftPosition -= speed;
             if (leftPosition < 0) {
                 leftPosition = 0;
             }
         } else if (keys.right) {
-            leftPosition += 10;
+            leftPosition += speed;
             if (leftPosition > windowWidth - spaceshipWidth) {
                 leftPosition = windowWidth - spaceshipWidth;
             }
@@ -58,7 +58,7 @@ export function spaceshipMovement() {
 
     function createSpaceship(e) {
         // Prevents the spaceship from shooting multiple lasers at once even if the key is held down
-        if (keys.up && !e.repeat && !keys.right && !keys.left && (e.key === 'ArrowUp' || e.key === 'w' || e.key === ' ')) {
+        if ((keys.up || keys.right || keys.left) && !e.repeat && (e.key === 'ArrowUp' || e.key === 'w' || e.key === ' ')) {
             createSpaceshipLaser();
         }
     }
