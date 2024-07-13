@@ -28,8 +28,10 @@ export function createSpaceshipLaser() {
             const enemies = document.querySelectorAll('.enemy')
             enemies.forEach(enemy => {
                 if (isCollision(spaceshipLaser, enemy)) {
+                    // replaced dead enemy image ### might fix this later
+                    enemy.src = 'view/img/dead-enemy.png'
                     spaceshipLaser.remove()
-                    enemy.remove()
+                    enemy.classList.remove('enemy')
                     clearInterval(movementInterval)
                 }
             })

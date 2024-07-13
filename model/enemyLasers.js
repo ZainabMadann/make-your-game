@@ -12,19 +12,19 @@ export function createEnemyLaser() {
     enemyLaser.style.left = `${randomLeft}px`
     enemyLaser.style.top = '0px'
     
-    document.body.appendChild(enemyLaser)
+    // document.body.appendChild(enemyLaser)
 
-    let topPosition = parseInt(enemyLaser.style.top, 10)
+    // let topPosition = parseInt(enemyLaser.style.top, 10)
 
-    function moveLaser() {
-        topPosition += 10
-        enemyLaser.style.top = `${topPosition}px`
+    // function moveLaser() {
+    //     topPosition += 10
+    //     enemyLaser.style.top = `${topPosition}px`
 
-        if (topPosition > window.innerHeight) {
-            enemyLaser.remove()
-            clearInterval(movementInterval)
-        }
-    }
+    //     if (topPosition > window.innerHeight) {
+    //         enemyLaser.remove()
+    //         clearInterval(movementInterval)
+    //     }
+    // }
 
-    const movementInterval = setInterval(moveLaser, 50)
+    // const movementInterval = setInterval(moveLaser, 50)
 }
