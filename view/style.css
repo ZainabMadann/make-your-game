@@ -78,3 +78,26 @@ body {
     width: 80px;
     height: 80px;
 }
+
+#pause-menu {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    z-index: 1000;
+    color: white;
+    text-align: center;
+}
+
+#scoreboard {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    color: white;
+}
+
+#scoreboard div {
+    margin-bottom: 10px;
+}
