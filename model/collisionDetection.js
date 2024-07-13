@@ -10,11 +10,20 @@ export function isCollision(laser, enemy) {
     )
 }
 
-export function detectCollision(laser, enemy) {
-    for (let i = 0; i < enemy.length; i++) {
-        if (isCollision(laser, enemy[i])) {
-            alert("Collision detected!")
-            break
-        }
+export function detectCollision(laser, spaceship) {
+
+    // Check for collision with spaceship
+    spaceship = document.getElementById('spaceship')
+    const laserRect = laser.getBoundingClientRect()
+    const spaceshipRect = spaceship.getBoundingClientRect()
+
+    if (
+        laserRect.left < spaceshipRect.right &&
+        laserRect.right > spaceshipRect.left &&
+        laserRect.top < spaceshipRect.bottom &&
+        laserRect.bottom > spaceshipRect.top
+    ) {
+        spaceship.style.display = 'none' // Hide the spaceship
+        laser.remove() // Remove the laser
     }
 }

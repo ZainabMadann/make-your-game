@@ -1,3 +1,5 @@
+import { detectCollision } from "./collisionDetection.js"
+
 export function createEnemyLaser() {
     const enemyLaser = document.createElement('img')
     enemyLaser.src = 'view/img/enemyLaser.png'
@@ -20,6 +22,8 @@ export function createEnemyLaser() {
         topPosition += 10
         enemyLaser.style.top = `${topPosition}px`
 
+        detectCollision(enemyLaser, spaceship)
+
         if (topPosition > window.innerHeight) {
             enemyLaser.remove()
             clearInterval(movementInterval)
@@ -28,3 +32,4 @@ export function createEnemyLaser() {
 
     const movementInterval = setInterval(moveLaser, 50)
 }
+
