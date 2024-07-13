@@ -23,7 +23,9 @@ export function detectCollision(laser, spaceship) {
         laserRect.top < spaceshipRect.bottom &&
         laserRect.bottom > spaceshipRect.top
     ) {
-        spaceship.style.display = 'none' // Hide the spaceship
-        laser.remove() // Remove the laser
+        // spaceship.style.display = 'none' // Hide the spaceship
+        alert('Game Over!') // Show an alert
+        laser.remove()
+        window.location.reload() // Reload the game and goes to the main menu
     }
 }
