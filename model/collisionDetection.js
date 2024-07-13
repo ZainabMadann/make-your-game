@@ -18,3 +18,15 @@ export function detectCollision(laser, enemy) {
         }
     }
 }
+
+export function isCollisionSpaceship(laser, spaceship) {
+    const laserRect = laser.getBoundingClientRect();
+    const spaceshipRect = spaceship.getBoundingClientRect();
+
+    return !(
+        laserRect.top > spaceshipRect.bottom ||
+        laserRect.bottom < spaceshipRect.top ||
+        laserRect.right < spaceshipRect.left ||
+        laserRect.left > spaceshipRect.right
+    );
+}

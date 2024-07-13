@@ -10,7 +10,7 @@ const spaceship = document.getElementById('spaceship')
 const spaceshipWidth = spaceship.offsetWidth
 const windowWidth = window.innerWidth
 let leftPosition = spaceship.offsetLeft
-let speed = 3
+let speed = 5
 
 export function setupControls() {
     document.addEventListener('keydown', (e) => {

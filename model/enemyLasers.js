@@ -1,3 +1,5 @@
+import { isCollisionSpaceship } from '../model/collisionDetection.js'
+
 export function createEnemyLaser() {
     const enemyLaser = document.createElement('img')
     enemyLaser.src = 'view/img/enemyLaser.png'
@@ -23,6 +25,13 @@ export function createEnemyLaser() {
         if (topPosition > window.innerHeight) {
             enemyLaser.remove()
             clearInterval(movementInterval)
+        }  else {
+            const spaceship = document.getElementById('spaceship');
+            if (isCollisionSpaceship(enemyLaser, spaceship)) {
+                alert('Game Over');
+                enemyLaser.remove();
+                clearInterval(movementInterval);
+            }
         }
     }
 
