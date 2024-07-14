@@ -1,3 +1,5 @@
+import { gameOver } from '../controller/gameover.js'
+
 export function isCollision(laser, enemy) {
     const laserRect = laser.getBoundingClientRect()
     const enemyRect = enemy.getBoundingClientRect()
@@ -23,9 +25,8 @@ export function detectCollision(laser, spaceship) {
         laserRect.top < spaceshipRect.bottom &&
         laserRect.bottom > spaceshipRect.top
     ) {
-        // spaceship.style.display = 'none' // Hide the spaceship
-        alert('Game Over!') // Show an alert
+        spaceship.style.visibility = 'hidden' // Hide the spaceship
         laser.remove()
-        window.location.reload() // Reload the game and goes to the main menu
+        gameOver()
     }
 }

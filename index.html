@@ -13,32 +13,41 @@
     <script type="module" src="./model/enemyLasers.js"></script>
   </head>
   <body>
-    <div id="pause-menu" style="display: none;">
-        <button id="continue-button">Continue</button>
-        <button id="restart-button">Restart</button>
-    </div>
-    
-    <div id="scoreboard">
-        <div id="timer">Time: 0</div>
-        <div id="score">Score: 0</div>
-        <div id="lives">Lives: 3</div>
-    </div>
-    
     <div id="main-menu">
       <div>
         <h1>Space Invaders</h1>
         <button id="start-button">Start Game</button>
       </div>
     </div>
-    <div id="game-area" style="display: none"></div>
-    <img
-      src="view/img/spaceship.png"
-      id="spaceship"
-      width="80"
-      height="79"
-      style="left: 10px; right: 10px"
-      loading="lazy"
-      alt="spaceship"
-    />
+
+    <div id="pause-menu" style="display: none">
+      <button id="continue-button">Continue</button>
+      <button id="restart-button">Restart</button>
+    </div>
+
+    <div id="scoreboard">
+      <div id="timer">Time: 0</div>
+      <div id="score">Score: 0</div>
+      <div id="lives">Lives: 3</div>
+    </div>
+
+    <div id="game-area">
+      <img
+        src="view/img/spaceship.png"
+        id="spaceship"
+        width="80"
+        height="79"
+        style="left: 10px; right: 10px"
+        loading="lazy"
+        alt="spaceship"
+      />
+    </div>
+
+    <div id="game-over" style="visibility: hidden">
+      <div>
+        <h1>Game Over</h1>
+        <button id="restart-button">Restart</button>
+      </div>
+    </div>
   </body>
 </html>
