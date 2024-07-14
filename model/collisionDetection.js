@@ -1,4 +1,4 @@
-import { gameOver } from '../controller/gameover.js'
+import { decreaseLives } from '../controller/scoreboard.js'
 
 export function isCollision(laser, enemy) {
     const laserRect = laser.getBoundingClientRect()
@@ -13,7 +13,6 @@ export function isCollision(laser, enemy) {
 }
 
 export function detectCollision(laser, spaceship) {
-
     // Check for collision with spaceship
     spaceship = document.getElementById('spaceship')
     const laserRect = laser.getBoundingClientRect()
@@ -25,8 +24,8 @@ export function detectCollision(laser, spaceship) {
         laserRect.top < spaceshipRect.bottom &&
         laserRect.bottom > spaceshipRect.top
     ) {
-        spaceship.style.visibility = 'hidden' // Hide the spaceship
+        // spaceship.style.visibility = 'hidden' // Hide the spaceship
+        decreaseLives()
         laser.remove()
-        gameOver()
     }
 }
