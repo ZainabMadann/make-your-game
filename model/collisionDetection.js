@@ -24,7 +24,6 @@ export function detectCollision(laser, spaceship) {
         laserRect.top < spaceshipRect.bottom &&
         laserRect.bottom > spaceshipRect.top
     ) {
-        // spaceship.style.visibility = 'hidden' // Hide the spaceship
         decreaseLives()
         laser.remove()
     }

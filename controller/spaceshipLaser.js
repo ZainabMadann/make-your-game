@@ -1,11 +1,4 @@
 import { isCollision } from '../model/collisionDetection.js'
-import { increaseScore } from '../controller/scoreboard.js'
-
-// let score = 50
-
-// function updatescore() {
-//     document.getElementById('score').innerText = `Score: ${score}`;
-// }
 
 export function createSpaceshipLaser() {
     const spaceship = document.getElementById('spaceship')
@@ -36,9 +29,7 @@ export function createSpaceshipLaser() {
             enemies.forEach(enemy => {
                 if (enemy.style.opacity !== '0' && isCollision(spaceshipLaser, enemy)) {
                     spaceshipLaser.remove()
-                    // enemy.classList.remove('enemy')
                     enemy.style.opacity = '0'
-                    
                     clearInterval(movementInterval)
                     increaseScore()
                 }
