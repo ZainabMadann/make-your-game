@@ -12,7 +12,6 @@ export function createEnemies(rows, cols) {
         enemy.style.margin = '0'
         enemy.style.padding = '0'
         enemy.id = i
-        console.log(enemy.id)
         container.appendChild(enemy)
     }
 

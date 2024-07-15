@@ -15,27 +15,25 @@ body {
     }
 }
 
-@keyframes moveInCircle {
-    0% {
-        transform: rotate(0deg) translate(200px, 50px) rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg) translate(200px, 50px) rotate(-360deg);
-    }
-}
-
-
 .enemy {
-    animation: moveInCircle 6s linear infinite;
+    animation:  6s linear infinite;
     width: 70px;
     height: 70px;
     margin: 0;
     padding: 0;
+    position: relative; 
+    z-index: 1; 
+}
+
+.enemyLaser {
+    position: absolute;
+    height: 20px;
+    z-index: 0; 
 }
 
 .enemy-container {
-     display: grid; 
-     grid-template-columns: repeat(6, 80px);
+    display: grid; 
+    grid-template-columns: repeat(6, 80px);
     grid-auto-rows: 80px; 
     gap: 3px;
     position: absolute;

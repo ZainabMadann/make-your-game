@@ -14,8 +14,7 @@ export function createEnemyLaser() {
     enemyLaser.style.left = `${randomLeft}px`
     enemyLaser.style.top = '0px'
     
-    document.body.appendChild(enemyLaser)
-
+    document.body.insertBefore(enemyLaser, document.body.firstChild);
     let topPosition = parseInt(enemyLaser.style.top, 10)
 
     function moveLaser() {

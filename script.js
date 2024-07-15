@@ -2,6 +2,7 @@ import { createEnemyLaser } from "./model/enemyLasers.js"
 import { createEnemies } from "./model/enemies.js"
 import { spaceshipMovement } from "./controller/spaceship.js"
 import { startTimer } from "./controller/scoreboard.js"
+import { moveEnemies } from "./model/enemiesMovement.js"
 
 function update() {
 	spaceshipMovement()
@@ -12,6 +13,7 @@ export function newGame() {
 	window.startGame = () => {
 		document.getElementById("main-menu").style.display = "none"
 		createEnemies(2, 6)
+        moveEnemies(); 
 		setInterval(createEnemyLaser, 1000)
 		requestAnimationFrame(update)
 		startTimer()
