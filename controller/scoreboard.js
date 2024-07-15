@@ -46,7 +46,7 @@ export function decreaseLives() {
 }
 
 
-export function increaseScore(){
+export function increaseScore() {
     score += 50;
     updatescore()
 }

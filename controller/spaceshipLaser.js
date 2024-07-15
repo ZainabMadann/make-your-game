@@ -1,4 +1,5 @@
 import { isCollision } from '../model/collisionDetection.js'
+import { increaseScore } from './scoreboard.js'
 
 export function createSpaceshipLaser() {
     const spaceship = document.getElementById('spaceship')
