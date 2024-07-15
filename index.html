@@ -1,45 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Space Invaders</title>
+		<link rel="stylesheet" href="./view/style.css" />
+		<script type="module" src="script.js" defer></script>
+		<script type="module" src="./controller/spaceship.js"></script>
+		<script type="module" src="./controller/spaceshipLaser.js"></script>
+		<script type="module" src="./model/collisionDetection.js"></script>
+		<script type="module" src="./model/enemies.js"></script>
+		<script type="module" src="./model/enemyLasers.js"></script>
+	</head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Space Invaders</title>
-    <link rel="stylesheet" href="./view/style.css" />
-    <script type="module" src="script.js" defer></script>
-    <script type="module" src="./controller/spaceship.js"></script>
-    <script type="module" src="./controller/spaceshipLaser.js"></script>
-    <script type="module" src="./model/collisionDetection.js"></script>
-    <script type="module" src="./model/enemies.js"></script>
-    <script type="module" src="./model/enemyLasers.js"></script>
-</head>
+	<body>
+		<div id="main-menu">
+			<div>
+				<h1>Space Invaders</h1>
+				<button id="start-button" onclick="startGame()">Start Game</button>
+			</div>
+		</div>
 
-<body>
-    <div id="main-menu">
-        <div>
-            <h1>Space Invaders</h1>
-            <button id="start-button" onclick="startGame()" >Start Game</button>
-        </div>
-    </div>
+		<div id="scoreboard">
+			<div id="timer">Time: 0</div>
+			<div id="score">Score: 0</div>
+			<div id="lives">Lives: 3</div>
+		</div>
 
+		<div id="game-area">
+			<img
+				src="view/img/spaceship.png"
+				id="spaceship"
+				width="80"
+				height="79"
+				style="left: 10px; right: 10px"
+				loading="lazy"
+				alt="spaceship"
+			/>
+            <div id="pause-menu" style="visibility: hidden;"></div>
+		</div>
 
-    <div id="scoreboard">
-        <div id="timer">Time: 0</div>
-        <div id="score">Score: 0</div>
-        <div id="lives">Lives: 3</div>
-    </div>
-
-    <div id="game-area">
-        <img src="view/img/spaceship.png" id="spaceship" width="80" height="79" style="left: 10px; right: 10px"
-            loading="lazy" alt="spaceship" />
-    </div>
-
-    <div id="game-over" style="visibility: hidden">
-        <div>
-            <h1>Game Over</h1>
-            <button id="restart-button">Restart</button>
-        </div>
-    </div>
-</body>
-
+		<div id="game-over" style="visibility: hidden">
+			<div>
+				<h1>Game Over</h1>
+				<button id="restart-button" onclick="restartGame()">Restart</button>
+			</div>
+		</div>
+	</body>
 </html>
