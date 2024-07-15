@@ -8,7 +8,7 @@ function update() {
 	createEnemyLaser()
 }
 
-function newGame() {
+export function newGame() {
 	window.startGame = () => {
 		document.getElementById("main-menu").style.display = "none"
 		createEnemies(2, 6)

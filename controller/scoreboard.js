@@ -1,4 +1,4 @@
-import { gameOver } from './gameover.js'
+import { gameOver } from '../model/gameover.js'
 
 let initialTime
 let lives = 3
