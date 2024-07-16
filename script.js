@@ -24,7 +24,7 @@ export function newGame() {
         enemyInterval = setInterval(createEnemyLaser, 1000)
         requestAnimationFrame(update)
         startTimer()
-    };
+    }
 }
 
 newGame()
@@ -42,4 +42,4 @@ window.pauseGame = () => {
         resumeTimer()
         document.getElementById("pause-button").innerText = "Pause"
     }
-};
+}
