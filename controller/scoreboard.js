@@ -14,7 +14,7 @@ export function updateTimer() {
     if (remainingTime > 0) {
         setTimeout(updateTimer, 1000 - (elapsed % 1000))
     } else {
-        gameOver();
+        gameOver()
     }
 }
 
@@ -22,11 +22,11 @@ export function formatTime(ms) {
     var totalSeconds = Math.floor(ms / 1000)
     var minutes = Math.floor(totalSeconds / 60)
     var seconds = totalSeconds % 60
-    return `Time: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}` 
+    return `Time: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`
 }
 
 export function startTimer() {
-    initialTime = new Date();
+    initialTime = new Date()
     setTimeout(updateTimer, 500)
 }
 
@@ -45,9 +45,12 @@ export function decreaseLives() {
     offaudio.play()
 }
 
-
 export function increaseScore() {
-    score += 50;
+    score += 50
+    if (score == 600) {
+        gameOver()
+        return
+    }
     updatescore()
 }
 

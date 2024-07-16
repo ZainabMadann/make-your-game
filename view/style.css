@@ -99,3 +99,9 @@ body {
 #scoreboard div {
     margin-bottom: 10px;
 }
+
+#pause-button {
+    padding: 10px 10px;
+    font-size: 12px;
+    cursor: pointer;
+}
