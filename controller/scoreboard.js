@@ -1,4 +1,4 @@
-import { gameOver } from '../model/gameover.js'
+import { gameOver, victory } from '../model/gameover.js'
 
 let initialTime
 let lives = 3
@@ -66,7 +66,7 @@ export function decreaseLives() {
 export function increaseScore() {
     score += 50
     if (score == 600) {
-        gameOver()
+        victory()
         return
     }
     updatescore()
