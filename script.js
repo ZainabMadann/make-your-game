@@ -7,7 +7,7 @@ import { freezeLasers } from "./model/enemyLasers.js"
 import { resumeLasers } from "./model/enemyLasers.js"
 
 window.pause = false
-let enemyInterval = 0
+export let enemyInterval = 0
 
 function update() {
     if (!window.pause) {
