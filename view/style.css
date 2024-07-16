@@ -98,28 +98,49 @@ h1 {
     text-align: center;
 }
 
-#scoreboard {
+/* #scoreboard {
     position: fixed;
     top: 10px;
     left: 10px;
     color: white;
+} */
+
+#scoreboard {
+    position: relative;
+    margin: 0 auto;
+    /* margin-bottom: 10px; */
+    font-size: 20px;
+    z-index: 10;
+    height: auto;
+    font-size: 30px;
 }
 
-#scoreboard div {
-    margin-bottom: 10px;
-    font-size: 20px;
+#timer {
+    /* text-align: left; */
+    color: white;
+}
+
+#score {
+    /* text-align: center; */
+    color: white;
 }
 
 #lives {
-    position: fixed;
-    top: 20px;
-    right: 50px;
-    font-size: 100px;
-    color: rgb(255, 0, 0);
+    /* text-align: right; */
+    color: rgb(0, 255, 0);
 }
 
-#pause-button {
+#pause-button, #restart {
     padding: 10px 10px;
     font-size: 12px;
     cursor: pointer;
+    /* position: fixed; */
+}
+
+#pause-button {
+    top: 10px;
+}
+
+#restart {
+    top: 40px;
 }
