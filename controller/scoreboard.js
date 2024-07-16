@@ -61,6 +61,8 @@ export function decreaseLives() {
         return
     }
     offaudio.play()
+    if (lives == 2) document.getElementById('lives').style.color = 'yellow'
+    if (lives == 1) document.getElementById('lives').style.color = 'red'
 }
 
 export function increaseScore() {

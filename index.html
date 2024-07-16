@@ -22,14 +22,15 @@
 		</div>
 	</div>
 
-	<div id="scoreboard">
-		<div id="timer">Time: 0</div>
-		<div id="score">Score: 0</div>
-		<div id="lives">Lives: 3</div>
-		<button id="pause-button" onclick="pauseGame()">Pause</button>
-	</div>
-
-	<div id="game-area">
+	
+	<div id="game-area" style="visibility: hidden;">
+		<div id="scoreboard">
+			<div id="timer">Time: 0</div>
+			<div id="score">Score: 0</div>
+			<div id="lives">Lives: 3</div>
+			<button id="pause-button" onclick="pauseGame()">Pause</button>
+			<button id="restart" style="visibility: hidden;" onclick="restartGame()">Restart</button>
+		</div>
 		<img src="view/img/spaceship.png" id="spaceship" width="80" height="79" style="left: 10px; right: 10px"
 			loading="lazy" alt="spaceship" />
 		<div id="pause-menu" style="visibility: hidden;"></div>
