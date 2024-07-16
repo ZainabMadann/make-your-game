@@ -1,7 +1,7 @@
 import { createEnemyLaser } from "./model/enemyLasers.js"
 import { createEnemies } from "./model/enemies.js"
 import { spaceshipMovement } from "./controller/spaceship.js"
-import { startTimer } from "./controller/scoreboard.js"
+import { freezeTimer, resumeTimer, startTimer } from "./controller/scoreboard.js"
 import { moveEnemies } from "./model/enemiesMovement.js"
 import { freezeLasers } from "./model/enemyLasers.js"
 import { resumeLasers } from "./model/enemyLasers.js"
@@ -34,10 +34,12 @@ window.pauseGame = () => {
     if (window.pause) {
         clearInterval(enemyInterval)
         freezeLasers()
+        freezeTimer()
         document.getElementById("pause-button").innerText = "Continue"
     } else {
         enemyInterval = setInterval(createEnemyLaser, 1000)
         resumeLasers()
+        resumeTimer()
         document.getElementById("pause-button").innerText = "Pause"
     }
 };
