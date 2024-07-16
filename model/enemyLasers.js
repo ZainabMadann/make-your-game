@@ -59,5 +59,5 @@ export function resumeLasers() {
 
         const movementInterval = setInterval(moveLaser, 50)
         activeLasers.push(movementInterval)
-    });
+    })
 }
