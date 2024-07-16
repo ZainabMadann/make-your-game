@@ -1,7 +1,7 @@
 let container = document.querySelector('.enemy-container')
 const radius = 100
 let angle = 0
-const angularSpeed = 0.05 // to change the move speed
+const angularSpeed = 0.02 // to change the move speed
 
 export function moveEnemies() {
     if (!container) {
